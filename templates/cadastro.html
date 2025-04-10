@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
-{% block title %}Login - Empreguei{% endblock %}
+{% block title %}Cadastro - Empreguei{% endblock %}
 {% block content %}
 <div class="login-container">
   <div class="logo" style="text-align: center; margin-bottom: 20px;">
     <strong style="font-size: 24px;">E</strong><span style="font-size: 24px;">Empreguei</span>
   </div>
-  <h1>Login</h1>
+  <h1>Cadastro</h1>
   <form method="POST">
+    <input type="text" name="nome" class="input-field" placeholder="Nome completo" required>
     <input type="email" name="email" class="input-field" placeholder="E-mail" required>
-    <input type="password" name="password" class="input-field" placeholder="Senha" required>
-    <button type="submit" class="filled-btn">Entrar</button>
+    <input type="password" name="senha" class="input-field" placeholder="Senha" required>
+    <button type="submit" class="filled-btn">Cadastrar</button>
   </form>
-  <p class="register-link">Não tem uma conta? <a href="{{ url_for('cadastro') }}">Cadastre-se</a></p>
 </div>
 {% endblock %}

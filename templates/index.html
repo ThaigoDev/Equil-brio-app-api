@@ -1,59 +1,19 @@
 {% extends 'base.html' %}
-
+{% block title %}Início - Empreguei{% endblock %}
 {% block content %}
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Empreguei</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="container">
-    <header>
-      <div class="logo">E <span>Empreguei</span></div>
-      <button class="login-btn">Login</button>
-    </header>
-
-    <main>
-      <h1>Conecte-se com<br><strong>quem resolve!</strong></h1>
-      <p>Publique seu serviço ou encontre<br>profissionais de forma rápida.</p>
-
-      <div class="action-buttons">
-        <button class="outline-btn">Encontrar profissional</button>
-        <button class="filled-btn">Publicar seu serviço</button>
-      </div>
-
-      <div class="services">
-        <div class="card">
-          <img src="https://img.icons8.com/ios-filled/50/000000/move-by-trolley.png"/>
-          <p>Ajudante</p>
-        </div>
-        <div class="card">
-          <img src="https://img.icons8.com/ios-filled/50/000000/furniture.png"/>
-          <p>Montador</p>
-        </div>
-        <div class="card">
-          <img src="https://img.icons8.com/ios-filled/50/000000/broom.png"/>
-          <p>Empregado</p>
-        </div>
-      </div>
-    </main>
-
-    <footer>
-      <div class="social">
-        <img src="https://img.icons8.com/ios-filled/30/facebook-new.png"/>
-        <img src="https://img.icons8.com/ios-filled/30/instagram-new.png"/>
-        <img src="https://img.icons8.com/ios-filled/30/x.png"/>
-        <img src="https://img.icons8.com/ios-filled/30/whatsapp.png"/>
-      </div>
-      <p>Copyright © Direitos De Autor Internacionais De Serviço.</p>
-    </footer>
-  </div>
-</body>
-</html>
-
+<div class="container">
+  <main>
+    <h1>Conecte-se com<br><strong>quem resolve!</strong></h1>
+    <p>Publique seu serviço ou encontre<br>profissionais de forma rápida.</p>
+    <div class="action-buttons">
+      <a href="/servicos"><button class="outline-btn">Encontrar profissional</button></a>
+      <a href="/cadastrar"><button class="filled-btn">Publicar seu serviço</button></a>
+    </div>
+    <div class="services">
+      <div class="card"><img src="https://img.icons8.com/ios-filled/50/000000/move-by-trolley.png"/><p>Ajudante</p></div>
+      <div class="card"><img src="https://img.icons8.com/ios-filled/50/000000/furniture.png"/><p>Montador</p></div>
+      <div class="card"><img src="https://img.icons8.com/ios-filled/50/000000/broom.png"/><p>Empregado</p></div>
+    </div>
+  </main>
+</div>
 {% endblock %}
