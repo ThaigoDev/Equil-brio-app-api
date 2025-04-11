@@ -7,10 +7,19 @@
   </div>
   <h1>Cadastro</h1>
   <form method="POST">
-    <input type="text" name="nome" class="input-field" placeholder="Nome completo" required>
-    <input type="email" name="email" class="input-field" placeholder="E-mail" required>
-    <input type="password" name="senha" class="input-field" placeholder="Senha" required>
-    <button type="submit" class="filled-btn">Cadastrar</button>
+    {{ form.hidden_tag() }}
+  
+    {{ form.titulo.label }}
+    {{ form.titulo(class="input-field") }}
+  
+    {{ form.descricao.label }}
+    {{ form.descricao(class="input-field") }}
+  
+    {{ form.categoria.label }}
+    {{ form.categoria(class="input-field") }}
+  
+    {{ form.submit(class="filled-btn") }}
   </form>
+  
 </div>
 {% endblock %}
