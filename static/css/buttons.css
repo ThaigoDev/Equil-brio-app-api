@@ -1,28 +1,37 @@
-.filled-btn, .outline-btn {
+.outline-btn, .filled-btn {
   padding: 12px 20px;
   border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
   border: none;
-}
-
-.filled-btn {
-  background-color: #0066ff;
-  color: #fff;
-}
-
-.filled-btn:hover {
-  background-color: #0051cc;
+  min-height: 45px;
 }
 
 .outline-btn {
-  background-color: transparent;
-  color: #0066ff;
-  border: 2px solid #0066ff;
+  background-color: #0066ff;
+  color: #fff;
+  
 }
 
 .outline-btn:hover {
-  background-color: #0066ff;
-  color: #fff;
+  background-color: #0051cc;
+  transform: scale(1.05);
+}
+
+.filled-btn {
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filled-btn:hover {
+  background-color: #f0f0f0;
+  color: black;
+  transform: scale(1.05);
 }
