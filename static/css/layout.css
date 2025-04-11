@@ -1,0 +1,58 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header .logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #222;
+}
+
+header .logo strong {
+  color: #0066ff;
+}
+
+header nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+}
+
+header nav a:hover {
+  color: #0066ff;
+}
+
+/* Container */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* Footer */
+footer {
+  margin-top: 60px;
+  padding: 20px 0;
+  background-color: #f1f1f1;
+  text-align: center;
+  color: #666;
+}
+
+footer .social img {
+  margin: 0 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+footer .social img:hover {
+  transform: scale(1.1);
+}
