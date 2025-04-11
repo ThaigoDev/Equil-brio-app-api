@@ -5,16 +5,16 @@
   <main>
     <h1>Cadastrar Serviço</h1>
     <form method="POST">
-      <input type="text" placeholder="Título" class="input-field" required>
-      <textarea placeholder="Descrição" class="input-field" required></textarea>
-      <select class="input-field" required>
+      <input type="text" name="titulo" placeholder="Título" class="input-field" required>
+      <textarea name="descricao" placeholder="Descrição" class="input-field" required></textarea>
+      <select name="categoria" class="input-field" required>
         <option disabled selected>Categoria</option>
         <option>Montador</option>
         <option>Empregada</option>
         <option>Ajudante</option>
       </select>
       <button type="submit" class="filled-btn">Cadastrar</button>
-    </form>
+    </form>    
   </main>
 </div>
 {% endblock %}
