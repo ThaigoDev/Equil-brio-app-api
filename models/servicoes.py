@@ -1,4 +1,7 @@
-from models import db
+from flask_sqlalchemy import SQLAlchemy
+from models import db  # usa o db da instância já configurada
+from flask_login import UserMixin
+from models.user import User
 
 class Servico(db.Model):
     __tablename__ = 'servicos'
@@ -7,5 +10,5 @@ class Servico(db.Model):
     descricao = db.Column(db.String(255), nullable=False)
     categoria = db.Column(db.String(50), nullable=False)
     usuario_id = db.Column(db.Integer, db.ForeignKey('usuario.id'), nullable=False)
-
+    
     usuario = db.relationship('User', backref=db.backref('servicos', lazy=True))
