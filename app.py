@@ -83,6 +83,7 @@ def servicos():
     servicos = Servico.query.all()
     return render_template('servicos.html', servicos=servicos)
 
+
 @app.route('/cadastrar-servico', methods=['GET', 'POST'])
 @login_required
 def cadastrar_servico():
@@ -90,8 +91,13 @@ def cadastrar_servico():
         titulo = request.form['titulo']
         descricao = request.form['descricao']
         categoria = request.form['categoria']
-        
-        novo_servico = Servico(titulo=titulo, descricao=descricao, categoria=categoria, usuario_id=current_user.id)
+
+        novo_servico = Servico(
+            titulo=titulo,
+            descricao=descricao,
+            categoria=categoria,
+            usuario_id=current_user.id
+        )
         db.session.add(novo_servico)
         db.session.commit()
         flash('Serviço cadastrado com sucesso!')
