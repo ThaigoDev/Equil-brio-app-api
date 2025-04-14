@@ -1,6 +1,4 @@
-from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy()
+from models import db
 
 class Servico(db.Model):
     __tablename__ = 'servicos'
@@ -8,6 +6,6 @@ class Servico(db.Model):
     titulo = db.Column(db.String(100), nullable=False)
     descricao = db.Column(db.String(255), nullable=False)
     categoria = db.Column(db.String(50), nullable=False)
-    usuario_id = db.Column(db.Integer, db.ForeignKey('usuario.id'), nullable=False)  # Correção aqui
-    
-    usuario = db.relationship('User', backref=db.backref('servicos', lazy=True))  # Relacionamento
+    usuario_id = db.Column(db.Integer, db.ForeignKey('usuario.id'), nullable=False)
+
+    usuario = db.relationship('User', backref=db.backref('servicos', lazy=True))
