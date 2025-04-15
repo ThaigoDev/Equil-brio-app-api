@@ -1,27 +1,23 @@
 from flask import Flask, render_template, redirect, url_for, request, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
-
+from werkzeug.security import generate_password_hash, check_password_hash
 from models import db
 from models.user import User
 from models.servicoes import Servico
 from models.forms import RegistroUsuarioForm
 
-from werkzeug.security import generate_password_hash, check_password_hash
-
-# Inicialização do Flask
 # Inicialização do Flask
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'chave-secreta-segura'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///empreguei.db'
+
+# Configuração para PostgreSQL
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postup!@localhost:5433/empreguei'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-# Agora, inicializando a instância do SQLAlchemy após a configuração
-
 
 # Inicializar a instância de LoginManager
 login_manager = LoginManager()
-login_manager.login_view = 'login'
+login_manager.login_view = 'login'  # Rota para redirecionar usuários não autenticados
 
 # Inicializar SQLAlchemy e LoginManager com a app Flask
 db.init_app(app)
@@ -83,7 +79,6 @@ def servicos():
     servicos = Servico.query.all()
     return render_template('servicos.html', servicos=servicos)
 
-
 @app.route('/cadastrar-servico', methods=['GET', 'POST'])
 @login_required
 def cadastrar_servico():
@@ -105,6 +100,7 @@ def cadastrar_servico():
     
     return render_template('registrar_servico.html')
 
+# Criando o banco de dados diretamente no bloco principal
 with app.app_context():
     db.create_all()  # Cria todas as tabelas, se não existirem
 
