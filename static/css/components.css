@@ -16,6 +16,33 @@
   transform: scale(1.05);
 }
 
+.servicos-lista {
+  list-style: none;
+  padding: 0;
+}
+
+.servico-item {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  padding: 15px;
+  text-align: left;
+}
+
+.servico-item strong {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.servico-item span {
+  display: block;
+  margin-top: 3px;
+  color: #333;
+}
+
+
 @media (max-width: 768px) {
   .services {
     justify-content: center;
@@ -34,3 +61,4 @@
   }
 
 }
+
