@@ -1,12 +1,26 @@
-<h1>Serviços Cadastrados</h1>
-<ul>
+{% extends 'base.html' %}
+
+{% block title %}Serviços Cadastrados - Empreguei{% endblock %}
+
+{% block content %}
+<div class="login-container">
+  <div class="logo-box">
+    <div class="logo-letter">E</div>
+    <span class="logo-text">Empreguei</span>
+  </div>
+  <h1 class="login-title">Serviços Cadastrados</h1>
+
+  <ul class="servicos-lista">
     {% for servico in servicos %}
-    <li>
+      <li class="servico-item">
         <strong>{{ servico.titulo }}</strong> <br>
         {{ servico.descricao }} <br>
-        Categoria: {{ servico.categoria }} <br>
-        Prestador: {{ servico.usuario.nome }}
-    </li>
-    <hr>
+        <span>Categoria: {{ servico.categoria }}</span> <br>
+        <span>Prestador: {{ servico.usuario.nome }}</span>
+      </li>
+    {% else %}
+      <p>Nenhum serviço cadastrado.</p>
     {% endfor %}
-</ul>
+  </ul>
+</div>
+{% endblock %}

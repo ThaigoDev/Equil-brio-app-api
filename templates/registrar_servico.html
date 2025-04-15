@@ -1,13 +1,26 @@
-<h1>Cadastrar Serviço</h1>
-<form method="POST">
-    <label>Título:</label><br>
-    <input type="text" name="titulo" required><br>
+{% extends 'base.html' %}
 
-    <label>Descrição:</label><br>
-    <textarea name="descricao" required></textarea><br>
+{% block title %}Cadastrar Serviço - Empreguei{% endblock %}
 
-    <label>Categoria:</label><br>
-    <input type="text" name="categoria" required><br>
+{% block content %}
+<div class="login-container">
+  <div class="logo-box">
+    <div class="logo-letter">E</div>
+    <span class="logo-text">Empreguei</span>
+  </div>
+  <h1 class="login-title">Cadastrar Serviço</h1>
 
-    <button type="submit">Cadastrar</button>
-</form>
+  <form method="POST">
+    <label for="titulo">Título:</label>
+    <input type="text" name="titulo" id="titulo" class="input-field" required>
+
+    <label for="descricao">Descrição:</label>
+    <textarea name="descricao" id="descricao" class="input-field" required></textarea>
+
+    <label for="categoria">Categoria:</label>
+    <input type="text" name="categoria" id="categoria" class="input-field" required>
+
+    <button type="submit" class="enter-btn">Cadastrar</button>
+  </form>
+</div>
+{% endblock %}
