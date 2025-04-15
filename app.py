@@ -7,12 +7,12 @@ from models.user import User
 from models.servicoes import Servico
 from models.forms import RegistroUsuarioForm
 
-# Inicialização do Flask
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'chave-secreta-segura'
 
 # Configuração para PostgreSQL
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postup!@localhost:5433/empreguei'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://12231:313131!@localhost:5433/teste'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Inicializar a instância de LoginManager
@@ -106,3 +106,5 @@ with app.app_context():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
