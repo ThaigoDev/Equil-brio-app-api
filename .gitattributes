@@ -1,4 +1,10 @@
-*.html linguist-language=HTML
-*.css linguist-language=CSS
+# Força o GitHub a reconhecer corretamente os arquivos HTML e CSS
+templates/*.html linguist-language=HTML
+static/css/*.css linguist-language=CSS
 
+# Ignora arquivos gerados automaticamente do Python
+__pycache__/** linguist-generated
+*.pyc linguist-generated
 
+# Ignora possíveis pastas de migração, se tiver
+migrations/** linguist-vendored
