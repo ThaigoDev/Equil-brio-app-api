@@ -1,11 +1,12 @@
 from flask import Flask, url_for, request, flash
+import os
 from flask_sqlalchemy import SQLAlchemy
-from database.db_setup import db
+from database.db_setup import db 
 # Inicialização do Flask
 app = Flask(__name__)
 
 # Configuração para PostgreSQL
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:admin@localhost:5432/equilibrio'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Inicialização do banco de dados
@@ -25,4 +26,4 @@ with app.app_context():
     db.create_all()
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug= os.getenv("DEBUG"))
