@@ -8,5 +8,5 @@ class Habit(db.Model):
     target_per_day = db.Column(db.Integer, nullable=False, default=1)
     created_at = db.Column(db.DateTime, server_default=db.func.now(), nullable=False)
 
-    # Relationship
+ 
     habit_records = db.relationship('HabitRecord', backref='habit', cascade="all, delete-orphan")

@@ -1,3 +1,5 @@
+from database.db_setup import db
+
 class Mood(db.Model):
     __tablename__ = 'moods'
 

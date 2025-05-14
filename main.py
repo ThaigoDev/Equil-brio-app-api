@@ -44,3 +44,6 @@ def get_moods(user_id):
         'note': m.note,
         'recorded_at': m.recorded_at.isoformat()
     } for m in moods])
+
+if __name__ == '__main__':
+    app.run(debug=True)
